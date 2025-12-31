@@ -133,3 +133,9 @@
                             target.classList.remove('under-attack', 'player'); target.classList.add('enemy'); target.innerHTML = "ZONE"; provs--;
                             msg(dict[lang].lost, "var(--red)");
                         } else
+                            { target.classList.remove('under-attack'); inf -= 40; msg(dict[lang].def, "var(--green)"); }
+                    }, 4000);
+                }
+                enemyLogic();
+            }, 15000);
+        }
