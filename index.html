@@ -59,4 +59,20 @@
         </div>
         <button class="btn-menu t-start" onclick="startGame()">SİSTEMİ BAŞLAT</button>
     </div>
+        <div id="game-ui">
+        <div class="top-bar">
+            <div class="stat"><span class="t-gold">QIZIL</span><span id="vG" class="val">100</span></div>
+            <div class="stat"><span class="t-inf">PİYADA</span><span id="vI" class="val">0</span></div>
+            <div class="stat"><span class="t-tank">TANK</span><span id="vT" class="val">0</span></div>
+            <div class="stat"><span class="t-sci">ELM</span><span id="vS" class="val">0</span></div>
+        </div>
+        <div id="msg" style="text-align:center; padding:10px; color:var(--theme); font-weight:bold; height:20px;">READY</div>
+        <div class="map" id="mapContainer"></div>
+        <div class="controls">
+            <button class="act-btn t-bI" onclick="buyInf()">+ PİYADA</button>
+            <button class="act-btn t-bT" onclick="buyTank()">+ TANK</button>
+            <button class="act-btn t-bS" style="border-color: var(--purple)" onclick="upTech()">ELM L1</button>
+        </div>
+    </div>
+    <div class="version-tag">V1.4.5</div>
     
