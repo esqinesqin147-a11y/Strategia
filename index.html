@@ -82,4 +82,17 @@
         az: { start: "SİSTEMİ BAŞLAT", fn1: "TEXNO", fd1: "ELM x2", fn2: "LEGİON", fd2: "TANK +50%", fn3: "XANLIQ", fd3: "QIZIL x2", gold: "QIZIL", inf: "PİYADA", tank: "TANK", sci: "ELM", bI: "+ PİYADA", bT: "+ TANK", bS: "ELM L", low: "GÜC AZDIR", win: "ZƏFƏR!", lost: "ZONA İTİRİLDİ!", def: "DƏF EDİLDİ!", ready: "ƏMR GÖZLƏNİLİR..." },
         en: { start: "START SYSTEM", fn1: "TECHNO", fd1: "SCI x2", fn2: "LEGION", fd2: "TANK +50%", fn3: "KHANATE", fd3: "GOLD x2", gold: "GOLD", inf: "INFANTRY", tank: "TANK", sci: "SCIENCE", bI: "+ INFANTRY", bT: "+ TANK", bS: "TECH L", low: "LOW POWER", win: "VICTORY!", lost: "ZONE LOST!", def: "DEFENDED!", ready: "AWAITING ORDERS..." }
     };
+         const canvas = document.getElementById('bg-canvas');
+    const ctx = canvas.getContext('2d');
+    function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    window.onresize = resize; resize();
+
+    function drawBg() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.strokeStyle = (faction === 'techno' ? '#bc8cff' : (faction === 'legion' ? '#ff3e3e' : '#ffd700')) + "15"; 
+        const size = 60;
+        for(let x=0; x<canvas.width; x+=size) for(let y=0; y<canvas.height; y+=size) ctx.strokeRect(x, y, size, size);
+        requestAnimationFrame(drawBg);
+    }
+    drawBg();
         
