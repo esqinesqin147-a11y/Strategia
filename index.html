@@ -121,4 +121,15 @@
             cont.appendChild(d);
         }
              }
-        
+        function enemyLogic() {
+            setTimeout(() => {
+                let pz = document.querySelectorAll('.player:not(#z-4)');
+                if(pz.length > 0) {
+                    let target = pz[Math.floor(Math.random()*pz.length)];
+                    target.classList.add('under-attack');
+                    setTimeout(() => {
+                        let tP = inf + (tanks * 50);
+                        if(tP < (300 + (provs * 20))) {
+                            target.classList.remove('under-attack', 'player'); target.classList.add('enemy'); target.innerHTML = "ZONE"; provs--;
+                            msg(dict[lang].lost, "var(--red)");
+                        } else
