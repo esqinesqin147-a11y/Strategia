@@ -101,3 +101,24 @@
         el.classList.add('lang-active');
         updateLangUI();
         }   
+            function init() {
+        const cont = document.getElementById('mapContainer');
+        cont.innerHTML = "";
+        for(let i=0; i<9; i++) {
+            let d = document.createElement('div');
+            d.className = 'tile ' + (i===4 ? 'player' : 'enemy');
+            d.id = "z-"+i; d.innerHTML = i===4 ? 'HQ' : 'ZONE';
+            d.onclick = () => {
+                if(d.classList.contains('player')) return;
+                let req = 150 + (provs * 80);
+                let pwr = inf + (tanks * (faction === 'legion' ? 75 : 50));
+                if(pwr >= req) {
+                    inf -= Math.floor(req/4); provs++;
+                    d.classList.replace('enemy', 'player'); d.innerHTML = "FƏTH";
+                    if(provs === 9) { alert(dict[lang].win); location.reload(); }
+                } else msg(dict[lang].low + ": " + pwr + "/" + req, "var(--red)");
+            };
+            cont.appendChild(d);
+        }
+             }
+        
