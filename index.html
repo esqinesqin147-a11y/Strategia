@@ -139,3 +139,12 @@
                 enemyLogic();
             }, 15000);
         }
+        function buyInf() { if(gold>=30) { gold-=30; inf+=25; } }
+        function buyTank() { if(gold>=120) { gold-=120; tanks+=1; } }
+        function upTech() { let c = tech * 60; if(sci>=c) { sci-=c; tech++; } }
+        function msg(t, c) { let m = document.getElementById('msg'); m.innerText = t; m.style.color = c; }
+        
+        updateLangUI();
+    </script>
+</body>
+</html>
