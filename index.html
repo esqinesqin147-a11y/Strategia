@@ -44,4 +44,19 @@
         .controls { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; padding: 20px; background: var(--panel); }
     </style>
 </head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div id="main-menu">
+        <div class="logo">STRATEGIA</div>
+        <div class="lang-box">
+            <button class="lang-btn lang-active" onclick="setLang('az', this)">AZ</button>
+            <button class="lang-btn" onclick="setLang('en', this)">EN</button>
+        </div>
+        <div class="faction-list">
+            <div class="f-card f-active" onclick="setFaction('techno', this)" style="--theme: #bc8cff"><i>⚛️</i><b class="t-fn1">TEXNO</b><span class="t-fd1">ELM x2</span></div>
+            <div class="f-card" onclick="setFaction('legion', this)" style="--theme: #ff3e3e"><i>⚔️</i><b class="t-fn2">LEGİON</b><span class="t-fd2">TANK +50%</span></div>
+            <div class="f-card" onclick="setFaction('gold', this)" style="--theme: #ffd700"><i>💰</i><b class="t-fn3">XANLIQ</b><span class="t-fd3">QIZIL x2</span></div>
+        </div>
+        <button class="btn-menu t-start" onclick="startGame()">SİSTEMİ BAŞLAT</button>
+    </div>
     
