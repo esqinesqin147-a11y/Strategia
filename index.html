@@ -32,4 +32,16 @@
             width: 260px; padding: 18px; border: 2px solid var(--theme); 
             background: none; color: white; border-radius: 50px; cursor: pointer; font-weight: bold;
         }
-        
+                #game-ui { display: none; height: 100vh; flex-direction: column; }
+        .top-bar { display: grid; grid-template-columns: repeat(4, 1fr); padding: 12px; background: var(--panel); border-bottom: 3px solid var(--theme); }
+        .stat { text-align: center; }
+        .val { font-size: 16px; font-weight: bold; color: var(--theme); }
+        .map { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 15px; margin: auto; }
+        .tile { aspect-ratio: 1/1; border: 2px solid rgba(255,255,255,0.1); border-radius: 20px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+        .player { border: 3px solid var(--green) !important; box-shadow: 0 0 15px rgba(57,211,83,0.3); }
+        .under-attack { animation: pulse-red 0.5s infinite; }
+        @keyframes pulse-red { 50% { background: rgba(255, 62, 62, 0.4); } }
+        .controls { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; padding: 20px; background: var(--panel); }
+    </style>
+</head>
+    
