@@ -95,4 +95,9 @@
         requestAnimationFrame(drawBg);
     }
     drawBg();
-        
+     function setLang(l, el) {
+        lang = l;
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('lang-active'));
+        el.classList.add('lang-active');
+        updateLangUI();
+        }   
